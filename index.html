@@ -14,13 +14,15 @@
 			sizes="32x32"
 			href="./assets/images/favicon-32x32.png"
 		/>
-    <link rel="stylesheet" href="style.css">
+		<link
+			rel="stylesheet"
+			href="./style/style.css"
+		/>
 		<title>Mortgage repayment calculator</title>
 	</head>
 	<body>
-		<main>
-			<section class="dashboard">
-				<div class="calculator">
+			<main class="dashboard">
+				<section class="calculator">
 					<div class="header">
 						<h1 class="headline">Mortgage Calculator</h1>
 						<button class="clear">Clear All</button>
@@ -29,7 +31,7 @@
 						action=""
 						class="controls"
 					>
-						<fieldset class="morgage-amount">
+						<fieldset class="input-group morgage-amount">
 							<label for="amount">Mortgage Amount</label>
 							<input
 								type="number"
@@ -37,16 +39,17 @@
 								id="amount"
 							/>
 						</fieldset>
-						<div>
-							<fieldset class="morgage-term">
+						<div class="group">
+							<fieldset class="input-group morgage-term">
 								<label for="term">Mortgage Term</label>
 								<input
 									type="number"
 									name="term"
 									id="term"
+									
 								/>
 							</fieldset>
-							<fieldset class="morgage-interest">
+							<fieldset class="input-group morgage-interest">
 								<label for="interest">Interest Rate</label>
 								<input
 									type="number"
@@ -57,37 +60,60 @@
 						</div>
 						<fieldset class="morgage-type">
 							<p>Mortgage Type</p>
-							<input
-								type="radio"
-								name="type"
-								id="repayment"
-								value="Repayment"
-							/>
-							<label for="repayment">Interest Rate</label>
-							<input
-								type="radio"
-								name="type"
-								id="interest-only"
-								value="Interest Only"
-							/>
-							<label for="interest-only">Interest Rate</label>
+							<div class="repayment radio-group">
+								<input
+									type="radio"
+									name="type"
+									id="repayment"
+									value="Repayment"
+								/>
+								<label for="repayment">Interest Rate</label>
+							</div>
+							<div class="interest-only radio-group">
+								<input
+									type="radio"
+									name="type"
+									id="interest-only"
+									value="Interest Only"
+								/>
+								<label for="interest-only">Interest Rate</label>
+							</div>
 						</fieldset>
-            <button type="submit">Calculate Repayments</button>
+						<button type="submit" class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M6 22h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2zm3-3H7v-2h2v2zm0-4H7v-2h2v2zm0-4H7V9h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm4 8h-2v-6h2v6zm0-8h-2V9h2v2zM6 4h12v3H6V4z"></path></svg><span class="text">Calculate Repayments</span></button>
 					</form>
-				</div>
-				<div class="preview">
-          <div class="pending-calculation">
-            <img src="" alt="">
-            <h1>Results shown here</h1>
-            <p>Complete the form and click "calculate repayments" to see what your monthly repayment would be.</p>
-          </div>
-          <div class="result">
-            <h1>Your results</h1>
-            <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click "calculate repayments" again.</p> 
-          </div>
-        </div>
-			</section>
-		</main>
-    <script src="./js/script.js"></script>
+				</section>
+				<aside class="preview">
+					<div class="placeholder">
+						<img
+							src="./assets/images/illustration-empty.svg"
+							alt=""
+						/>
+						<h1>Results shown here</h1>
+						<p>
+							Complete the form and click "calculate repayments" to see what
+							your monthly repayment would be.
+						</p>
+					</div>
+					<div class="result">
+						<h1>Your results</h1>
+						<p>
+							Your results are shown below based on the information you
+							provided. To adjust the results, edit the form and click
+							"calculate repayments" again.
+						</p>
+						<div class="amounts">
+							<div>
+								<p>Your monthly repayments</p>
+								<p class="repayment"><span>£</span><span class="repayment-value"></span></p>
+							</div>
+							<div>
+								<p>Total you'll repay over the term</p>
+								<p class="total"><span>£</span><span class="total-value"></span></p>
+							</div>
+						</div>
+					</div>
+				</aside>
+			</ma>
+		<script src="./js/script.js"></script>
 	</body>
 </html>
